@@ -4,6 +4,9 @@ import { LayerCard } from "@/components/LayerCard";
 import { ApplicationCard } from "@/components/ApplicationCard";
 import { StatusIndicator } from "@/components/StatusIndicator";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useSensorSimulation } from "@/hooks/useSensorSimulation";
+import { SensorChart } from "@/components/SensorChart";
+import { SensorMetrics } from "@/components/SensorMetrics";
 
 const Index = () => {
   return (
@@ -124,6 +127,8 @@ const Index = () => {
         {/* Interactive Dashboard */}
         <section className="space-y-6">
           <h2 className="text-3xl font-bold text-foreground">Real-Time Monitoring Dashboard</h2>
+          {/* Sensor Analysis Simulator */}
+          <SensorAnalysisSimulator />
           
           {/* Quality Metrics */}
           <div>
@@ -317,3 +322,19 @@ const Index = () => {
 };
 
 export default Index;
+
+const SensorAnalysisSimulator = () => {
+  const { buffer, metrics } = useSensorSimulation();
+  return (
+    <div className="space-y-4">
+      <h3 className="text-xl font-semibold text-foreground">Sensor Analysis Simulator</h3>
+      <SensorChart data={buffer} />
+      <SensorMetrics
+        snrDb={metrics.signalToNoiseRatioDb}
+        artifactScore={metrics.artifactScore}
+        driftScore={metrics.driftScore}
+        fusionConfidence={metrics.fusionConfidence}
+      />
+    </div>
+  );
+};
