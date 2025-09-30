@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Activity, TrendingUp, AlertTriangle, Zap } from "lucide-react";
 
 export function SensorMetrics({
   snrDb,
@@ -11,29 +11,101 @@ export function SensorMetrics({
   driftScore: number;
   fusionConfidence: number;
 }) {
+  const getStatus = (value: number, type: 'snr' | 'score' | 'confidence') => {
+    if (type === 'snr') return value > 15 ? 'success' : value > 10 ? 'warning' : 'error';
+    if (type === 'confidence') return value > 0.7 ? 'success' : value > 0.5 ? 'warning' : 'error';
+    return value < 0.3 ? 'success' : value < 0.6 ? 'warning' : 'error';
+  };
+
   const items = [
-    { label: "SNR (dB)", value: snrDb.toFixed(2) },
-    { label: "Artifact", value: artifactScore.toFixed(2) },
-    { label: "Drift", value: driftScore.toFixed(2) },
-    { label: "Fusion Conf.", value: fusionConfidence.toFixed(2) },
+    { 
+      label: "Signal to Noise", 
+      value: snrDb.toFixed(1), 
+      unit: "dB",
+      icon: Activity,
+      status: getStatus(snrDb, 'snr'),
+      description: "Signal clarity"
+    },
+    { 
+      label: "Artifact Score", 
+      value: (artifactScore * 100).toFixed(0), 
+      unit: "%",
+      icon: AlertTriangle,
+      status: getStatus(artifactScore, 'score'),
+      description: "Signal anomalies"
+    },
+    { 
+      label: "Drift Score", 
+      value: (driftScore * 100).toFixed(0), 
+      unit: "%",
+      icon: TrendingUp,
+      status: getStatus(driftScore, 'score'),
+      description: "Baseline shift"
+    },
+    { 
+      label: "Fusion Quality", 
+      value: (fusionConfidence * 100).toFixed(0), 
+      unit: "%",
+      icon: Zap,
+      status: getStatus(fusionConfidence, 'confidence'),
+      description: "Integration confidence"
+    },
   ];
+
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Quality Metrics</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {items.map((m) => (
-            <div key={m.label} className="rounded-lg border p-4">
-              <div className="text-xs text-muted-foreground">{m.label}</div>
-              <div className="text-xl font-semibold text-foreground">{m.value}</div>
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+      {items.map((item) => {
+        const Icon = item.icon;
+        const statusColor = {
+          success: 'text-success',
+          warning: 'text-warning',
+          error: 'text-destructive'
+        }[item.status];
+        
+        const borderColor = {
+          success: 'border-success/30',
+          warning: 'border-warning/30',
+          error: 'border-destructive/30'
+        }[item.status];
+
+        return (
+          <div key={item.label} className={`industrial-card group ${borderColor} hover:scale-[1.02]`}>
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <Icon className={`h-4 w-4 ${statusColor}`} />
+                <div className="flex items-baseline gap-0.5">
+                  <span className={`text-2xl font-bold ${statusColor}`}>
+                    {item.value}
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    {item.unit}
+                  </span>
+                </div>
+              </div>
+              <div>
+                <div className="text-xs font-medium text-foreground/90">
+                  {item.label}
+                </div>
+                <div className="text-[10px] text-muted-foreground/70">
+                  {item.description}
+                </div>
+              </div>
             </div>
-          ))}
-        </div>
-      </CardContent>
-    </Card>
+            
+            {/* Status bar */}
+            <div className="mt-2 h-1 rounded-full bg-muted overflow-hidden">
+              <div 
+                className={`h-full ${item.status === 'success' ? 'bg-success' : item.status === 'warning' ? 'bg-warning' : 'bg-destructive'} transition-all`}
+                style={{ width: `${Math.min(100, parseFloat(item.value))}%` }}
+              />
+            </div>
+          </div>
+        );
+      })}
+    </div>
   );
 }
+
+
 
 
