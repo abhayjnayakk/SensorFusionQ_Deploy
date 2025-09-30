@@ -1,4 +1,4 @@
-import { Activity, Database, Layers, CheckCircle2, Eye, Brain, Heart, Stethoscope, Microscope, Activity as ActivityIcon, Shield, TrendingUp, Users, Zap } from "lucide-react";
+import { Activity, Database, Layers, CheckCircle2, Eye, Brain, Stethoscope, Microscope, Activity as ActivityIcon, Shield, TrendingUp, Users, Zap } from "lucide-react";
 import { MetricCard } from "@/components/MetricCard";
 import { LayerCard } from "@/components/LayerCard";
 import { ApplicationCard } from "@/components/ApplicationCard";
@@ -12,7 +12,7 @@ const Index = () => {
       <header className="border-b bg-card">
         <div className="container mx-auto px-4 py-6">
           <h1 className="text-3xl font-bold text-foreground">Sensor Fusion Framework</h1>
-          <p className="text-muted-foreground mt-1">Team Utkarsh - Biomedical Data Quality Enhancement</p>
+          <p className="text-muted-foreground mt-1">CIM Team 32 - Team Utkarsh | PReMI 2025 Workshop</p>
         </div>
       </header>
 
@@ -24,7 +24,7 @@ const Index = () => {
           </div>
           <h2 className="text-4xl font-bold text-foreground">Introduction</h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Our framework addresses critical challenges in biomedical data management by implementing advanced sensor fusion techniques to enhance data quality, reduce bias, and ensure integrity across multimodal data streams.
+            Our framework addresses the critical need for robust quality assessment and enhancement of biomedical data across imaging, physiological signals, and clinical text. In alignment with PReMI 2025 Workshop themes, we present a unified Data Fusion Dashboard and Sensor Fusion Framework designed to ensure reliable preprocessing, quality validation, and multimodal integration.
           </p>
         </section>
 
@@ -36,19 +36,23 @@ const Index = () => {
               <ul className="grid md:grid-cols-2 gap-4">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Develop a robust multimodal data fusion architecture for biomedical applications</span>
+                  <span className="text-foreground">Develop a unified framework for sensor and data fusion across biomedical modalities</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Implement real-time quality assessment and bias detection mechanisms</span>
+                  <span className="text-foreground">Enhance data quality through preprocessing, cleaning, and bias detection</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Ensure data integrity across imaging, biosignal, and clinical text modalities</span>
+                  <span className="text-foreground">Enable real-time monitoring of data integrity using AI-enabled validation tools</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                  <span className="text-foreground">Create validation frameworks for enhanced diagnostic accuracy</span>
+                  <span className="text-foreground">Support multimodal fusion including imaging, biosignals, and clinical text</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-foreground">Ensure ethical, reproducible, and cybersecurity-aware workflows</span>
                 </li>
               </ul>
             </CardContent>
@@ -64,10 +68,10 @@ const Index = () => {
               description="Multi-source data collection and standardization"
               icon={Database}
               details={[
-                "Integration with medical imaging systems (MRI, CT, X-ray)",
-                "Real-time biosignal capture (ECG, EEG, EMG)",
-                "Clinical text extraction from electronic health records",
-                "Standardized data formatting and metadata management"
+                "Interfaces with medical sensors including ECG, EEG, MRI, CT, and wearable devices",
+                "Real-time data streaming from heterogeneous biomedical sources",
+                "Standardized data formatting for multimodal integration",
+                "Metadata management and source tracking"
               ]}
             />
             <LayerCard
@@ -75,10 +79,10 @@ const Index = () => {
               description="Data cleaning, normalization, and preparation"
               icon={Layers}
               details={[
-                "Noise reduction and artifact removal algorithms",
-                "Signal normalization and standardization protocols",
-                "Missing data imputation strategies",
-                "Temporal alignment of multimodal data streams"
+                "Data cleaning and denoising algorithms",
+                "Artifact removal from physiological signals",
+                "Precise annotation systems for quality control",
+                "Normalization and standardization protocols"
               ]}
             />
             <LayerCard
@@ -86,10 +90,10 @@ const Index = () => {
               description="Intelligent integration of multimodal data"
               icon={Brain}
               details={[
-                "Advanced sensor fusion algorithms for heterogeneous data",
-                "Cross-modal feature extraction and alignment",
-                "Weighted fusion based on data quality metrics",
-                "Adaptive fusion strategies for varying data availability"
+                "AI-driven multimodal fusion algorithms",
+                "Integration of imaging, physiological signals, and textual records",
+                "Cross-domain feature extraction and alignment",
+                "Adaptive fusion strategies for heterogeneous data types"
               ]}
             />
             <LayerCard
@@ -97,10 +101,10 @@ const Index = () => {
               description="Quality assurance and bias detection"
               icon={Shield}
               details={[
-                "Real-time data quality monitoring and scoring",
-                "Statistical bias detection across demographic groups",
-                "Cross-validation with gold standard datasets",
-                "Automated anomaly detection and flagging"
+                "Bias detection and mitigation across multi-centre studies",
+                "Ethical checks and compliance validation",
+                "Reproducibility assessments and quality metrics",
+                "Human-in-the-loop validation systems"
               ]}
             />
             <LayerCard
@@ -108,10 +112,10 @@ const Index = () => {
               description="Interactive data exploration and reporting"
               icon={Eye}
               details={[
-                "Multi-dimensional data visualization interfaces",
-                "Real-time quality metrics dashboards",
-                "Interactive bias analysis reports",
-                "Export capabilities for clinical integration"
+                "Interactive Data Fusion Dashboard interface",
+                "Real-time quality metrics visualization",
+                "Integrity validation and trial insights displays",
+                "Comprehensive reporting and analytics tools"
               ]}
             />
           </div>
@@ -123,35 +127,35 @@ const Index = () => {
           
           {/* Quality Metrics */}
           <div>
-            <h3 className="text-xl font-semibold text-foreground mb-4">Quality Metrics</h3>
+            <h3 className="text-xl font-semibold text-foreground mb-4">Data Quality Indicators</h3>
             <div className="grid md:grid-cols-4 gap-4">
               <MetricCard
                 title="Data Integrity"
-                value="97.2%"
+                value="Active"
                 icon={Shield}
                 status="success"
-                description="Overall data completeness"
+                description="Real-time monitoring"
               />
               <MetricCard
                 title="Signal Quality"
-                value="94.8%"
+                value="Monitoring"
                 icon={ActivityIcon}
                 status="success"
-                description="Biosignal fidelity score"
+                description="Biosignal validation"
               />
               <MetricCard
-                title="Fusion Accuracy"
-                value="96.5%"
+                title="Fusion Status"
+                value="Active"
                 icon={Zap}
                 status="success"
-                description="Cross-modal alignment"
+                description="Multimodal integration"
               />
               <MetricCard
-                title="Processing Time"
-                value="2.3s"
+                title="Processing"
+                value="Live"
                 icon={TrendingUp}
                 status="neutral"
-                description="Average latency"
+                description="AI-enabled validation"
               />
             </div>
           </div>
@@ -161,10 +165,10 @@ const Index = () => {
             <h3 className="text-xl font-semibold text-foreground mb-4">Bias Detection Status</h3>
             <Card>
               <CardContent className="pt-6 space-y-3">
-                <StatusIndicator status="active" label="Demographic Bias Monitor" />
-                <StatusIndicator status="active" label="Selection Bias Detector" />
-                <StatusIndicator status="warning" label="Measurement Bias Scanner" />
-                <StatusIndicator status="active" label="Algorithmic Fairness Check" />
+                <StatusIndicator status="active" label="Bias Detection Monitor" />
+                <StatusIndicator status="active" label="Ethical Compliance Check" />
+                <StatusIndicator status="active" label="Reproducibility Validation" />
+                <StatusIndicator status="active" label="Cybersecurity Assessment" />
               </CardContent>
             </Card>
           </div>
@@ -189,7 +193,7 @@ const Index = () => {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Heart className="h-5 w-5 text-primary" />
+                    <ActivityIcon className="h-5 w-5 text-primary" />
                     Biosignals
                   </CardTitle>
                 </CardHeader>
@@ -221,33 +225,33 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-foreground">Key Applications</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             <ApplicationCard
-              title="Cardiac Diagnosis"
-              description="Enhanced ECG analysis combined with cardiac imaging for improved heart disease detection"
-              icon={Heart}
-            />
-            <ApplicationCard
-              title="Neurological Assessment"
-              description="Integrated EEG and brain imaging for comprehensive neurological disorder evaluation"
-              icon={Brain}
-            />
-            <ApplicationCard
-              title="Cancer Detection"
-              description="Multimodal imaging fusion for early cancer screening and diagnosis"
+              title="Clinical Trial Enhancement"
+              description="Advanced preprocessing and quality enhancement of clinical trial data"
               icon={Microscope}
             />
             <ApplicationCard
-              title="Clinical Decision Support"
-              description="Real-time data integration to assist healthcare providers in treatment decisions"
-              icon={Stethoscope}
+              title="Bias Detection & Mitigation"
+              description="Identifying and reducing bias across multi-centre biomedical studies"
+              icon={Shield}
             />
             <ApplicationCard
-              title="Patient Monitoring"
-              description="Continuous multimodal monitoring for ICU and remote patient care"
+              title="AI-Driven Radiology"
+              description="Human-in-the-loop quality validation for AI-enabled radiology workflows"
+              icon={Brain}
+            />
+            <ApplicationCard
+              title="Secure Data Integrity"
+              description="AI-enabled cybersecurity tools for secure data validation"
               icon={ActivityIcon}
             />
             <ApplicationCard
+              title="Multimodal Fusion"
+              description="Cross-domain data fusion for personalized healthcare insights"
+              icon={Layers}
+            />
+            <ApplicationCard
               title="Research Analytics"
-              description="Large-scale biomedical data analysis for clinical research and drug development"
+              description="Scalable solutions for next-generation biomedical research applications"
               icon={TrendingUp}
             />
           </div>
@@ -265,9 +269,10 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                <p className="text-sm text-foreground">• Improved diagnostic accuracy through comprehensive data integration</p>
-                <p className="text-sm text-foreground">• Reduced healthcare disparities via bias detection and mitigation</p>
-                <p className="text-sm text-foreground">• Enhanced patient outcomes with real-time quality monitoring</p>
+                <p className="text-sm text-foreground">• Significantly improved biomedical data reliability and quality</p>
+                <p className="text-sm text-foreground">• Reduced errors in clinical decision-making processes</p>
+                <p className="text-sm text-foreground">• Accelerated adoption of ethical AI in healthcare systems</p>
+                <p className="text-sm text-foreground">• Enhanced patient safety through robust quality validation</p>
               </CardContent>
             </Card>
             <Card className="border-primary/20">
@@ -278,9 +283,10 @@ const Index = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                <p className="text-sm text-foreground">• Accelerated biomedical research through reliable data infrastructure</p>
-                <p className="text-sm text-foreground">• Standardized protocols for multimodal data integration</p>
-                <p className="text-sm text-foreground">• Foundation for AI-driven medical discovery and innovation</p>
+                <p className="text-sm text-foreground">• Advanced healthcare research through reliable data infrastructure</p>
+                <p className="text-sm text-foreground">• Ensured reproducibility, transparency, and security in research workflows</p>
+                <p className="text-sm text-foreground">• Contribution to PReMI 2025 themes on Machine Intelligence in Quality Assessment</p>
+                <p className="text-sm text-foreground">• Foundation for ethical, scalable biomedical AI applications</p>
               </CardContent>
             </Card>
           </div>
@@ -292,9 +298,9 @@ const Index = () => {
           <Card className="max-w-4xl mx-auto bg-primary/5 border-primary/20">
             <CardContent className="pt-6">
               <p className="text-foreground leading-relaxed">
-                The Sensor Fusion Framework for Biomedical Data Quality Enhancement represents a significant advancement in healthcare data management. By integrating multimodal data streams with robust quality assurance and bias detection mechanisms, our framework enables more accurate diagnoses, personalized treatments, and equitable healthcare delivery. This research establishes a foundation for next-generation clinical decision support systems and biomedical research platforms.
+                Team Utkarsh's Sensor Fusion Framework bridges the gap between raw biomedical signals and actionable intelligence. By ensuring reproducibility, transparency, and security, the framework directly contributes to advancing healthcare research and practice in alignment with PReMI 2025 themes. Through the Data Fusion Dashboard, it provides a scalable and ethical solution for next-generation biomedical research and clinical applications.
               </p>
-              <p className="text-muted-foreground mt-4 text-sm">Team Utkarsh | Biomedical Data Quality Enhancement Project</p>
+              <p className="text-muted-foreground mt-4 text-sm">CIM Team 32 - Team Utkarsh | PReMI 2025 Workshop</p>
             </CardContent>
           </Card>
         </section>
@@ -303,7 +309,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t bg-card mt-12">
         <div className="container mx-auto px-4 py-6 text-center text-muted-foreground text-sm">
-          © 2025 Team Utkarsh - Sensor Fusion Framework
+          © 2025 CIM Team 32 - Team Utkarsh | PReMI 2025 Workshop
         </div>
       </footer>
     </div>
