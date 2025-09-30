@@ -8,8 +8,8 @@ export default defineConfig(() => ({
     host: "::",
     port: 8080,
   },
-  // Set base path for GitHub Pages: https://<user>.github.io/biofusion-dash/
-  base: "/biofusion-dash/",
+  // Set base path for GitHub Pages: https://<user>.github.io/SensorFusionQ_Deploy/
+  base: "/SensorFusionQ_Deploy/",
   plugins: [react()],
   resolve: {
     alias: {
